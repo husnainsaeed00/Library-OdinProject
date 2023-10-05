@@ -1,0 +1,229 @@
+:root{
+    --white: #f3f3f3;
+    --blue: #2185d5;
+    --dark1: #2d4059;
+    --crimson:crimson;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+html{
+    box-sizing: border-box;
+    font-family:"Poppins", sans-serif;
+}
+body{
+    box-sizing: border-box;
+    background-color:var(--white);
+    margin:0;
+    padding:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color:var(--crimson);
+    padding:10px;
+    position: absolute;
+    top: 0%;
+    width:100%;
+}
+header h1{
+    font-size: 2.3rem;
+    color:var(--white) !important;
+    letter-spacing:2px;
+    text-align: left;
+}
+#new-book{
+    width:50px;
+    height:50px;
+    position: fixed;
+    bottom: 5%;
+    right:5%;
+    border: none;
+    outline:none;
+    transition: .5s ease;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color:var(--crimson);
+    font-size:18px;
+    font-weight: bold;
+    color:var(--white);
+}
+#container{
+    width:400px;
+    background-color: var(--white);
+    padding:5px;
+    margin-top: 3vh;
+    transform: scale(1);
+    transition:.5s ease;
+    color: var(--white);
+    border-radius:10px;
+    z-index:1000;
+    box-shadow: 5px 5px 35px 5px rgba(0, 0, 0, 0.2);
+}
+#container h1{
+    color:crimson;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size:2rem;
+    padding: 1rem;
+}
+#container input[type="text"],
+#container input[type="number"],
+select{
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: 0;
+    background:gainsboro;
+    font-size: 1rem;
+    outline: 0;
+}
+#container input[type="submit"]{
+    width:100%;
+    background-color: crimson;
+    cursor:pointer;
+    padding:.5rem;
+    margin-top:.5rem;
+    color:white;
+    font-size:18px;
+    font-weight: bold;
+    border:none;
+}
+#container label{
+    color: black;
+    text-transform: capitalize;
+    font-size: medium;
+    font-weight: 100;
+}
+#container .close{
+    color:var(--crimson);
+    position: absolute;
+    transform: rotate(45deg);
+    font-size:3rem;
+    top: 0%;
+    right:10px;
+}
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+  
+.bookshelf{
+    position: absolute;
+    top: 15%;
+    left:15%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    max-width:1000px;
+    margin:2rem;
+    
+}
+.book {
+    width: 250px;
+    height: 300px;
+    border-radius: 5px;
+    margin: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+    background: white;
+  }
+  
+  .book:hover {
+    box-shadow: 3px 3px 30px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .book h2 {
+    background: var(--crimson);
+    color: var(--white);
+    padding: 0.5rem 0;
+    margin: -0.5rem 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .book h3 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .book h3 {
+    margin: 1rem;
+  }
+  
+  .book .trash,
+  .book .update {
+    outline: none;
+    border: none;
+    margin-top:2px;
+    border-radius:3px;
+    width: 100%;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .book .update {
+    background: darkred;
+    color: var(--white);
+    position: relative;
+    top: 40px;
+  }
+  
+  .book .trash {
+    background: var(--crimson);
+    color: var(--white);
+    position: relative;
+    top: 40px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  @media screen and (max-width: 360px) {
+    #popup #container {
+      width: 260px;
+      padding-top: 10px;
+    }
+  
+    #container h1 {
+      font-size: 32px;
+    }
+  
+    #container .close {
+      font-size: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 420px) {
+    #container {
+      width: 320px;
+    }
+  
+    #container h1 {
+      font-size: 36px;
+    }
+  
+    #container .close {
+      font-size: 32px;
+    }
+  }
+  
